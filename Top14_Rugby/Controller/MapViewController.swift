@@ -8,7 +8,7 @@
 import UIKit
 import MapKit
 
-class MapViewController: UIViewController {
+class MapViewController: UIViewController, MKMapViewDelegate {
 
     var allStadiums: [Stadium] = Datas.shared.allStadiums
     
@@ -17,13 +17,32 @@ class MapViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        map.delegate = self
         allStadiums.forEach { stadium in
             let anno = StadiumAnnotation(stadium)
             map.addAnnotation(anno)
         }
-        
-
     }
+        
+        func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+            if annotation is MKUserLocation {
+                return nil
+            }
+            let id = "ID"
+            var view: StadiumAnnotationView
+            if let anno = annotation as? StadiumAnnotation {
+                if let d = mapView.dequeueReusableAnnotationView(withIdentifier: id) as? StadiumAnnotationView {
+                    d.annotation = anno
+                    view = d
+                } else {
+                    view = StadiumAnnotationView(annotation: annotation, reuseIdentifier: id)
+                }
+                return view
+            }
+            return MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: id)
+        }
+
+
     
 
     /*

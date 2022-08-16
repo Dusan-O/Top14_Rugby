@@ -19,6 +19,7 @@
 		2F58C43B28ABA8DE00C6CA36 /* Datas.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58C43A28ABA8DE00C6CA36 /* Datas.swift */; };
 		2F58C43D28ABAE0A00C6CA36 /* ClubCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58C43C28ABAE0A00C6CA36 /* ClubCell.swift */; };
 		2F58C43F28ABB57E00C6CA36 /* StadiumAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58C43E28ABB57E00C6CA36 /* StadiumAnnotations.swift */; };
+		2F58C44128ABF77000C6CA36 /* StadiumAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2F58C44028ABF77000C6CA36 /* StadiumAnnotationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		2F58C43A28ABA8DE00C6CA36 /* Datas.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Datas.swift; sourceTree = "<group>"; };
 		2F58C43C28ABAE0A00C6CA36 /* ClubCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClubCell.swift; sourceTree = "<group>"; };
 		2F58C43E28ABB57E00C6CA36 /* StadiumAnnotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumAnnotations.swift; sourceTree = "<group>"; };
+		2F58C44028ABF77000C6CA36 /* StadiumAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StadiumAnnotationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 			children = (
 				2F58C43628ABA87000C6CA36 /* Club.swift */,
 				2F58C43828ABA8B100C6CA36 /* Stadium.swift */,
+				2F58C43E28ABB57E00C6CA36 /* StadiumAnnotations.swift */,
 				2F58C43A28ABA8DE00C6CA36 /* Datas.swift */,
 			);
 			path = Model;
@@ -95,7 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				2F58C43C28ABAE0A00C6CA36 /* ClubCell.swift */,
-				2F58C43E28ABB57E00C6CA36 /* StadiumAnnotations.swift */,
+				2F58C44028ABF77000C6CA36 /* StadiumAnnotationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				2F58C41E28AB98CB00C6CA36 /* SceneDelegate.swift in Sources */,
 				2F58C43528ABA83900C6CA36 /* TableViewController.swift in Sources */,
 				2F58C43F28ABB57E00C6CA36 /* StadiumAnnotations.swift in Sources */,
+				2F58C44128ABF77000C6CA36 /* StadiumAnnotationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
