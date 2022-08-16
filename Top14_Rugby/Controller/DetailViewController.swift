@@ -32,6 +32,14 @@ class DetailViewController: UIViewController {
         europeanLbl.text = convertArrayIntToText(club.europeanChampion, "euoropéens")
         stadiumNameLbl.text = club.stadium.name
         stadiumCapacityLbl.text = "Capacité: \(club.stadium.capacity)"
+        centerMap()
+    }
+    
+    func centerMap() {
+        let span = MKCoordinateSpan(latitudeDelta: 0.025, longitudeDelta: 0.05)
+        let center = CLLocationCoordinate2D(latitude: club.stadium.lat, longitude: club.stadium.lon)
+        let region = MKCoordinateRegion(center: center, span: span)
+        map.setRegion(region, animated: true)
     }
     
     func convertArrayIntToText(_ array: [Int], _ extra: String) -> String {

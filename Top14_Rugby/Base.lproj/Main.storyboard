@@ -253,7 +253,7 @@
                     <navigationItem key="navigationItem" title="Les Clubs" id="67J-FB-Umy"/>
                     <connections>
                         <outlet property="tableView" destination="Q4H-a9-NJ8" id="4nO-fw-FoL"/>
-                        <segue destination="UQl-Gd-7Qd" kind="show" id="1n1-Ot-ShI"/>
+                        <segue destination="UQl-Gd-7Qd" kind="show" identifier="ToDetail" id="1n1-Ot-ShI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sar-z9-OLS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

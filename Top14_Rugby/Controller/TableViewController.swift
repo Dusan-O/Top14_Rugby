@@ -9,9 +9,9 @@ import UIKit
 
 class TableViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    
     @IBOutlet weak var tableView: UITableView!
     
+    let id = "ToDetail"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,19 +43,18 @@ class TableViewController: UIViewController, UITableViewDelegate, UITableViewDat
         return 90
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        <#code#>
-//    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let club = Datas.shared.allClubs[indexPath.row]
+        performSegue(withIdentifier: id, sender: club)
     }
-    */
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == id {
+            if let detail = segue.destination as? DetailViewController {
+                detail.club = sender as? Club
+            }
+        }
+    }
+    
 
 }
