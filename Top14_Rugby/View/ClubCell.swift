@@ -22,6 +22,14 @@ class ClubCell: UITableViewCell {
         self.logoIV.image = UIImage(named: self.club.nickname)
         self.cityLbl.text = self.club.city
         self.nameLbl.text = self.club.name
+        self.centerCard()
     }
+    
+    func centerCard() {
+        let stadium = self.club.stadium
+        
+        let coords = CLLocationCoordinate2D(latitude: stadium.lat, longitude: stadium.lon)
 
+        map.setRegion(MKCoordinateRegion(center: coords, span: MKCoordinateSpan(latitudeDelta: 0.25, longitudeDelta: 0.25)), animated: true)
+    }
 }
