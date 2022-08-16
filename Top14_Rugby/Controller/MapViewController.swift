@@ -22,6 +22,16 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             let anno = StadiumAnnotation(stadium)
             map.addAnnotation(anno)
         }
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(notificationObserver),
+                                               name: Notification.Name("Center"),
+                                               object: nil)
+    }
+    
+    @objc func notificationObserver(_ notification: Notification) {
+        if let notif = notification.object as? MKCoordinateRegion {
+            map.setRegion(notif, animated: true)
+        }
     }
         
         func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
