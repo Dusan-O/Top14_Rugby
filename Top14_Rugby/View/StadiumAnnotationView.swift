@@ -32,6 +32,11 @@ class StadiumAnnotationView: MKAnnotationView {
             action: #selector(toDetail))
     }
     
+    func update(_ annotation: MKAnnotation) {
+        self.annotation = annotation
+        setup()
+    }
+    
     func getImage() -> UIImage? {
         if let club = Datas.shared.allClubs.first(where: {$0.stadium.name == annotation?.title}) {
             return UIImage(named: club.nickname)

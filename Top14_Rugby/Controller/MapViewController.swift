@@ -47,6 +47,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                 } else {
                     view = StadiumAnnotationView(annotation: annotation, reuseIdentifier: id)
                 }
+                view.update(annotation)
                 return view
             }
             return MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: id)
