@@ -10,11 +10,17 @@ import MapKit
 
 class MapViewController: UIViewController {
 
+    var allStadiums: [Stadium] = Datas.shared.allStadiums
+    
     @IBOutlet weak var map: MKMapView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        allStadiums.forEach { stadium in
+            let anno = StadiumAnnotation(stadium)
+            map.addAnnotation(anno)
+        }
         
 
     }

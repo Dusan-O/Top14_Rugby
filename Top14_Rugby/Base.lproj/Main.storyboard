@@ -8,21 +8,35 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Carte-->
+        <!--Les Stades-->
         <scene sceneID="ToI-gt-Z1h">
             <objects>
                 <viewController id="gfA-o7-kxt" customClass="MapViewController" customModule="Top14_Rugby" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="IDx-LP-yOZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZKa-b8-LKZ">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="leN-jt-xcK"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="ZKa-b8-LKZ" firstAttribute="trailing" secondItem="leN-jt-xcK" secondAttribute="trailing" id="6Oo-t5-Jgs"/>
+                            <constraint firstItem="ZKa-b8-LKZ" firstAttribute="top" secondItem="leN-jt-xcK" secondAttribute="top" id="Ede-wy-XrQ"/>
+                            <constraint firstItem="ZKa-b8-LKZ" firstAttribute="leading" secondItem="leN-jt-xcK" secondAttribute="leading" id="Jdf-Dd-fXs"/>
+                            <constraint firstItem="leN-jt-xcK" firstAttribute="bottom" secondItem="ZKa-b8-LKZ" secondAttribute="bottom" id="LMF-Ph-ViI"/>
+                        </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Carte" image="globe.europe.africa.fill" catalog="system" id="NhX-9K-k8I"/>
+                    <navigationItem key="navigationItem" title="Les Stades" id="azG-dB-B8y"/>
+                    <connections>
+                        <outlet property="map" destination="ZKa-b8-LKZ" id="yrP-Id-h7Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3cA-C4-Y5t" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="436" y="421"/>
+            <point key="canvasLocation" x="1344.9275362318842" y="420.53571428571428"/>
         </scene>
         <!--Les Clubs-->
         <scene sceneID="bi7-YI-dNZ">
@@ -127,7 +141,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="vC5-eU-HpG" kind="relationship" relationship="viewControllers" id="O1C-Bi-akb"/>
-                        <segue destination="gfA-o7-kxt" kind="relationship" relationship="viewControllers" id="qu1-Jl-tJ7"/>
+                        <segue destination="Sho-eX-Ktu" kind="relationship" relationship="viewControllers" id="qu1-Jl-tJ7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="efT-n1-zTP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -152,6 +166,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ymr-3W-JzT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="434.78260869565219" y="-254.46428571428569"/>
+        </scene>
+        <!--Carte-->
+        <scene sceneID="Ku8-uX-7O5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sho-eX-Ktu" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Carte" image="globe.europe.africa.fill" catalog="system" id="NhX-9K-k8I"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="YJW-yw-QJO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="gfA-o7-kxt" kind="relationship" relationship="rootViewController" id="r2T-tN-p7v"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k8J-sy-jKQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="434.78260869565219" y="420.53571428571428"/>
         </scene>
     </scenes>
     <resources>
