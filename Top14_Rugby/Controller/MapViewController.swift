@@ -11,6 +11,7 @@ import MapKit
 class MapViewController: UIViewController, MKMapViewDelegate {
 
     var allStadiums: [Stadium] = Datas.shared.allStadiums
+    var segueId = "identifier"
     
     @IBOutlet weak var map: MKMapView!
     
@@ -26,11 +27,18 @@ class MapViewController: UIViewController, MKMapViewDelegate {
                                                selector: #selector(notificationObserver),
                                                name: Notification.Name("Center"),
                                                object: nil)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(notificationObserver),
+                                               name: Notification.Name("Detail"),
+                                               object: nil)
     }
+    
     
     @objc func notificationObserver(_ notification: Notification) {
         if let notif = notification.object as? MKCoordinateRegion {
             map.setRegion(notif, animated: true)
+        } else if let notif = notification.object as? Club {
+            performSegue(withIdentifier: segueId, sender: notif)
         }
     }
         
@@ -53,17 +61,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
             return MKMarkerAnnotationView(annotation: annotation, reuseIdentifier: id)
         }
 
-
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == segueId {
+            if let next = segue.destination as? DetailViewController {
+                next.club = sender as? Club
+            }
+        }
     }
-    */
+
 
 }

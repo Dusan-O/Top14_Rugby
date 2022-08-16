@@ -52,7 +52,8 @@ class StadiumAnnotationView: MKAnnotationView {
     }
     
     @objc func toDetail() {
-        
+        let club = Datas.shared.allClubs.first(where: {$0.stadium.name == annotation!.title})
+        NotificationCenter.default.post(name: Notification.Name("Detail"), object: club)
     }
 }
 
